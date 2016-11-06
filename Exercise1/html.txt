@@ -1,0 +1,482 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>    Downloading Debian CD/DVD images via HTTP/FTP </title>
+  <link rev="made" href="mailto:webmaster@debian.org">
+  <meta name="Generator" content="WML 2.0.12 (16-Apr-2008)">
+  <meta name="Modified" content="2016-10-31 07:27:57">
+  <meta name="viewport" content="width=device-width">
+  <meta name="mobileoptimized" content="300">
+  <meta name="HandheldFriendly" content="true">
+<link href="../../debian.css" rel="stylesheet" type="text/css">
+  <link href="../../debian-en.css" rel="stylesheet" type="text/css" media="all">
+<link rel="search" type="application/opensearchdescription+xml" title="Debian website search" href="../../search.en.xml">
+</head>
+<body>
+<div id="header">
+   <div id="upperheader">
+   <div id="logo">
+  <a href="../../" title="Debian Home"><img src="../../Pics/openlogo-50.png" alt="Debian" width="50" height="61"></a>
+  </div> <!-- end logo -->
+	<div id="searchbox">
+		<form name="p" method="get" action="https://search.debian.org/cgi-bin/omega">
+		<p>
+<input type="hidden" name="DB" value="en">
+			<input name="P" value="" size="27">
+			<input type="submit" value="Search">
+		</p>
+		</form>
+	</div>   <!-- end sitetools -->
+ </div> <!-- end upperheader -->
+<!--UdmComment-->
+<div id="navbar">
+<p class="hidecss"><a href="#content">Skip Quicknav</a></p>
+<ul>
+   <li><a href="../../intro/about">About Debian</a></li>
+   <li><a href="../../distrib/">Getting Debian</a></li>
+   <li><a href="../../support">Support</a></li>
+   <li><a href="../../devel/">Developers' Corner</a></li>
+</ul>
+</div> <!-- end navbar -->
+<p id="breadcrumbs"><a href="../">Debian on CDs</a>
+ &#x2F;
+Downloading Debian CD/DVD images via HTTP/FTP</p>
+</div> <!-- end header -->
+<!--/UdmComment-->
+<div id="content">
+<div id="second-nav">
+<!--UdmComment-->
+      <p><a href="../../CD/">Debian&nbsp;on&nbsp;CD</a></p>
+    <ul class="cdmenu">
+      <li><a href="../../CD/faq/">FAQ</a></li>
+      <li><a href="../../CD/netinst/">Network Install</a></li>
+      <li><a href="../../CD/vendors/">Buy CDs or DVDs</a></li>
+      <li>Download
+         <ul>
+         <li><a href="../../CD/jigdo-cd/">Download with Jigdo</a></li>
+         <li><a href="../../CD/http-ftp/">Download via HTTP/FTP</a></li>
+         <li><a href="../../CD/torrent-cd/">Download with Torrent</a></li>
+         <li><a href="../../CD/mirroring/rsync-mirrors">Rsync Mirrors</a></li>
+         <li><a href="../../CD/verify">Verify</a></li>
+	 </ul>
+      </li>
+      <li>Misc
+         <ul>
+	  <li><a href="../../CD/artwork/">Artwork</a></li>
+	  <li><a href="../../CD/mirroring/">Mirroring</a></li>
+	  <li><a href="../../CD/releases/">Image Release Info</a></li>
+	 </ul>
+      </li>
+    </ul>
+<!--/UdmComment-->
+</div> <!-- end second-nav -->
+<div id="maincol">
+<h1>Downloading Debian CD/DVD images via HTTP/FTP</h1>
+<div class="tip">
+<p><strong>Please do not download CD or DVD images with your web browser the way
+you download other files!</strong> The reason is that if your download
+aborts, most browsers do not allow you to resume from the point where it
+failed.</p>
+</div>
+<p>Instead, please use a tool that supports resuming. Under Unix,
+you can use <a href="http://aria2.sourceforge.net/">aria2</a>, <a href="http://dfast.sourceforge.net/">wxDownload Fast</a> or (on the command line)
+<q><tt>wget&nbsp;-c&nbsp;</tt><em>URL</em></q> or
+<q><tt>curl&nbsp;-C&nbsp;-&nbsp;-L&nbsp;-O&nbsp;</tt><em>URL</em></q>.
+Under Windows, you might want to try
+<a href="http://www.freedownloadmanager.org/">Free Download Manager</a>.
+Under Mac&nbsp;OS, have a look at
+<a href="http://code.google.com/p/cocoawget/">CocoaWget</a>.
+You can also look at a <a
+href="http://en.wikipedia.org/wiki/Comparison_of_download_managers">comparison
+of download managers</a> and choose a program that you like.</p>
+<p>The following Debian images are available for
+download:</p>
+<ul>
+  <li><a href="#stable">Official CD/DVD images of the <q>stable</q> release</a></li>
+  <li><a href="http://cdimage.debian.org/cdimage/weekly-builds/">Official
+  CD/DVD images of the <q>testing</q> distribution (<em>regenerated
+  weekly</em>)</a></li>
+</ul>
+<p>See also:</p>
+<ul>
+  <li>A complete <a href="#mirrors">list of <tt>debian-cd/</tt> mirrors</a></li>
+  <li>For <q>network install</q> (150-300&nbsp;MB) images,
+  see the <a href="../netinst/">network install</a> page.</li>
+  <li>For <q>netinst</q> images of the <q>testing</q>
+  release, both daily builds and known working snapshots, see the <a
+  href="../../devel/debian-installer/">Debian-Installer page</a>.</li>
+</ul>
+<hr>
+<h2><a name="stable">Official CD/DVD images of the <q>stable</q> release</a></h2>
+<p>To install Debian on a machine without an Internet connection,
+it's possible to use CD images (650&nbsp;MB each) or DVD images (4.4&nbsp;GB each).
+Download the first CD or DVD image file, write it using a CD/DVD recorder (or a
+USB stick on i386 and amd64 ports), and then reboot from that.</p>
+<p>The <strong>first</strong> CD/DVD disk contains all the files necessary
+to install a standard Debian system.<br>
+To avoid needless downloads, please do <strong>not</strong> download
+other CD or DVD image files unless you know that you need packages on
+them.</p>
+<div class="line">
+<div class="item col50">
+<p><strong>CD</strong></p>
+<p>The following links point to image files which are up to 650&nbsp;MB
+in size, making them suitable for writing to normal CD-R(W) media:</p>
+<div class="downloads"><ul class="downlist"><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/amd64/iso-cd/">amd64</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/arm64/iso-cd/">arm64</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/armel/iso-cd/">armel</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/armhf/iso-cd/">armhf</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/i386/iso-cd/">i386</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/mips/iso-cd/">mips</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/mipsel/iso-cd/">mipsel</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/powerpc/iso-cd/">powerpc</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/ppc64el/iso-cd/">ppc64el</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/s390x/iso-cd/">s390x</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/source/iso-cd/">source</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/multi-arch/iso-cd/">multi-arch</a></li></ul></div>
+</div>
+<div class="item col50 lastcol">
+<p><strong>DVD</strong></p>
+<p>The following links point to image files which are up to 4.4&nbsp;GB
+in size, making them suitable for writing to normal DVD-R/DVD+R and
+similar media:</p>
+<div class="downloads"><ul class="downlist"><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/amd64/iso-dvd/">amd64</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/arm64/iso-dvd/">arm64</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/armel/iso-dvd/">armel</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/armhf/iso-dvd/">armhf</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/i386/iso-dvd/">i386</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/mips/iso-dvd/">mips</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/mipsel/iso-dvd/">mipsel</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/powerpc/iso-dvd/">powerpc</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/ppc64el/iso-dvd/">ppc64el</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/s390x/iso-dvd/">s390x</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/source/iso-dvd/">source</a></li><li><a href="http://cdimage.debian.org/debian-cd/8.6.0/multi-arch/iso-dvd/">multi-arch</a></li></ul></div>
+</div><div class="clear"></div>
+</div>
+<p>Be sure to have a look at the documentation before you install.
+<strong>If you read only one document</strong> before installing, read our
+<a href="../../releases/stable/i386/apa">Installation Howto</a>, a quick
+walkthrough of the installation process. Other useful documentation includes:
+</p>
+<ul>
+<li><a href="../../releases/stable/installmanual">Installation Guide</a>,
+    the detailed installation instructions</li>
+<li><a href="https://wiki.debian.org/DebianInstaller">Debian-Installer
+    Documentation</a>, including the FAQ with common questions and answers</li>
+<li><a href="../../releases/stable/debian-installer/#errata">Debian-Installer
+    Errata</a>, the list of known problems in the installer</li>
+</ul>
+<hr>
+<h2><a name="mirrors">Registered mirrors of the <q>debian-cd</q> archive</a></h2>
+<p>Note that <strong>some mirrors are not up to date</strong> &mdash;
+before downloading, check the version number of the images is the
+same as the one listed <a href="../#latest">on this site</a>!
+Additionally, note that many sites do not mirror the full set of
+images (especially the DVD images) due to its size.</p>
+<p><strong>If in doubt, use the <a href="http://cdimage.debian.org/debian-cd/">primary
+CD image server</a> in Sweden,</strong> or try
+<a href="http://debian-cd.debian.net/">the experimental automatic
+mirror selector</a> that will automatically redirect you to a nearby
+mirror that is known to have the current version.</p>
+<p>Are you interested in offering the Debian CD images on your
+mirror? If yes, see the <a href="../mirroring/">instructions on
+how to set up a CD image mirror</a>.</p>
+<ul>
+<li>Argentina: debian.xfree.com.ar: <a rel="nofollow" href="http://debian.xfree.com.ar/debian-cd/">HTTP</a></li>
+<li>Armenia: mirrors.asnet.am: <a rel="nofollow" href="http://mirrors.asnet.am/debian-cd/">HTTP</a></li>
+<li>Australia: debian.mirror.digitalpacific.com.au: <a rel="nofollow" href="http://debian.mirror.digitalpacific.com.au/debian-cd/">HTTP</a></li>
+<li>Australia: debian.uberglobalmirror.com: <a rel="nofollow" href="http://debian.uberglobalmirror.com/debian-cd/">HTTP</a></li>
+<li>Australia: ftp.iinet.net.au: <a rel="nofollow" href="ftp://ftp.iinet.net.au/debian/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.iinet.net.au/debian/debian-cd/">HTTP</a></li>
+<li>Australia: mirror.as24220.net: <a rel="nofollow" href="ftp://mirror.as24220.net/pub/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.as24220.net/pub/debian-cd/">HTTP</a></li>
+<li>Australia: mirror.cse.unsw.edu.au: <a rel="nofollow" href="http://mirror.cse.unsw.edu.au/debian-cd/">HTTP</a></li>
+<li>Australia: mirror.overthewire.com.au: <a rel="nofollow" href="ftp://mirror.overthewire.com.au/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.overthewire.com.au/debian-cd/">HTTP</a></li>
+<li>Australia: mirror.rackcentral.com.au: <a rel="nofollow" href="http://mirror.rackcentral.com.au/debian-cd/">HTTP</a></li>
+<li>Australia: mirror.waia.asn.au: <a rel="nofollow" href="ftp://mirror.waia.asn.au/pub/linux/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.waia.asn.au/pub/linux/debian-cd/">HTTP</a></li>
+<li>Austria: debian.anexia.at: <a rel="nofollow" href="ftp://debian.anexia.at/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.anexia.at/debian-cd/">HTTP</a></li>
+<li>Austria: debian.inode.at: <a rel="nofollow" href="ftp://debian.inode.at/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.inode.at/debian-cd/">HTTP</a></li>
+<li>Austria: debian.sil.at: <a rel="nofollow" href="ftp://debian.sil.at/debian-cd/">FTP</a></li>
+<li>Austria: ftp.at.debian.org: <a rel="nofollow" href="ftp://ftp.at.debian.org/debian-cd/">FTP</a></li>
+<li>Bangladesh: mirror.dhakacom.com: <a rel="nofollow" href="ftp://mirror.dhakacom.com/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.dhakacom.com/debian-cd/">HTTP</a></li>
+<li>Belarus: ftp.by.debian.org: <a rel="nofollow" href="ftp://ftp.by.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.by.debian.org/debian-cd/">HTTP</a></li>
+<li>Belarus: mirror.datacenter.by: <a rel="nofollow" href="ftp://mirror.datacenter.by/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.datacenter.by/debian-cd/">HTTP</a></li>
+<li>Belgium: ftp.belnet.be: <a rel="nofollow" href="ftp://ftp.belnet.be/debian-cd/">FTP</a></li>
+<li>Belgium: mirror.as35701.net: <a rel="nofollow" href="ftp://mirror.as35701.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.as35701.net/debian-cd/">HTTP</a></li>
+<li>Brazil: debian.c3sl.ufpr.br: <a rel="nofollow" href="http://debian.c3sl.ufpr.br/debian-cd/">HTTP</a></li>
+<li>Brazil: debian.las.ic.unicamp.br: <a rel="nofollow" href="ftp://debian.las.ic.unicamp.br/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.las.ic.unicamp.br/debian-cd/">HTTP</a></li>
+<li>Brazil: debs.pelotas.ifsul.edu.br: <a rel="nofollow" href="ftp://debs.pelotas.ifsul.edu.br/debian-cd/">FTP</a></li>
+<li>Brazil: sft.if.usp.br: <a rel="nofollow" href="http://sft.if.usp.br/debian-cd/">HTTP</a></li>
+<li>Canada: debian.mirror.iweb.ca: <a rel="nofollow" href="ftp://debian.mirror.iweb.ca/debian-cd/">FTP</a></li>
+<li>Canada: mirror.its.dal.ca: <a rel="nofollow" href="ftp://mirror.its.dal.ca/debian-cd/">FTP</a></li>
+<li>China: mirrors.cug.edu.cn: <a rel="nofollow" href="http://mirrors.cug.edu.cn/debian-cd/">HTTP</a></li>
+<li>China: mirrors.hust.edu.cn: <a rel="nofollow" href="http://mirrors.hust.edu.cn/debian-cd/">HTTP</a></li>
+<li>China: mirrors.sohu.com: <a rel="nofollow" href="ftp://mirrors.sohu.com/debian-cd/">FTP</a></li>
+<li>China: mirrors.ustc.edu.cn: <a rel="nofollow" href="ftp://mirrors.ustc.edu.cn/debian-cd/">FTP</a></li>
+<li>China: mirrors.xjtu.edu.cn: <a rel="nofollow" href="http://mirrors.xjtu.edu.cn/debian-cd/">HTTP</a></li>
+<li>Costa Rica: mirrors.ucr.ac.cr: <a rel="nofollow" href="ftp://mirrors.ucr.ac.cr/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.ucr.ac.cr/debian-cd/">HTTP</a></li>
+<li>Croatia: debian.carnet.hr: <a rel="nofollow" href="ftp://debian.carnet.hr/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.carnet.hr/debian-cd/">HTTP</a></li>
+<li>Croatia: ftp.carnet.hr: <a rel="nofollow" href="ftp://ftp.carnet.hr/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.carnet.hr/debian-cd/">HTTP</a></li>
+<li>Czech Republic: debian-cd.mirror.web4u.cz: <a rel="nofollow" href="http://debian-cd.mirror.web4u.cz/">HTTP</a></li>
+<li>Czech Republic: debian.ignum.cz: <a rel="nofollow" href="ftp://debian.ignum.cz/debian-cd/">FTP</a></li>
+<li>Czech Republic: debian.superhosting.cz: <a rel="nofollow" href="http://debian.superhosting.cz/debian-cd/">HTTP</a></li>
+<li>Czech Republic: mirror.dkm.cz: <a rel="nofollow" href="ftp://mirror.dkm.cz/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.dkm.cz/debian-cd/">HTTP</a></li>
+<li>Denmark: mirror.easyspeedy.com: <a rel="nofollow" href="ftp://mirror.easyspeedy.com/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.easyspeedy.com/debian-cd/">HTTP</a></li>
+<li>Denmark: mirror.one.com: <a rel="nofollow" href="ftp://mirror.one.com/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.one.com/debian-cd/">HTTP</a></li>
+<li>Denmark: mirrors.dotsrc.org: <a rel="nofollow" href="ftp://mirrors.dotsrc.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.dotsrc.org/debian-cd/">HTTP</a></li>
+<li>Denmark: mirrors.rackhosting.com: <a rel="nofollow" href="ftp://mirrors.rackhosting.com/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.rackhosting.com/debian-cd/">HTTP</a></li>
+<li>Ecuador: mirror.cedia.org.ec: <a rel="nofollow" href="ftp://mirror.cedia.org.ec/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.cedia.org.ec/debian-cd/">HTTP</a></li>
+<li>Ecuador: mirror.ueb.edu.ec: <a rel="nofollow" href="http://mirror.ueb.edu.ec/debian-cd/">HTTP</a></li>
+<li>Ecuador: mirror.uta.edu.ec: <a rel="nofollow" href="http://mirror.uta.edu.ec/debian-cd/">HTTP</a></li>
+<li>El Salvador: debian.salud.gob.sv: <a rel="nofollow" href="ftp://debian.salud.gob.sv/debian-cd/">FTP</a></li>
+<li>El Salvador: debian.ues.edu.sv: <a rel="nofollow" href="http://debian.ues.edu.sv/debian-cd/">HTTP</a></li>
+<li>Finland: ftp.funet.fi: <a rel="nofollow" href="ftp://ftp.funet.fi/pub/linux/mirrors/debian-cdimage/">FTP</a> <a rel="nofollow" href="http://ftp.funet.fi/pub/linux/mirrors/debian-cdimage/">HTTP</a></li>
+<li>Finland: trumpetti.atm.tut.fi: <a rel="nofollow" href="ftp://trumpetti.atm.tut.fi/debian-cd/">FTP</a> <a rel="nofollow" href="http://trumpetti.atm.tut.fi/debian-cd/">HTTP</a></li>
+<li>France: debian.univ-lorraine.fr: <a rel="nofollow" href="ftp://debian.univ-lorraine.fr/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.univ-lorraine.fr/debian-cd/">HTTP</a></li>
+<li>France: ftp2.fr.debian.org: <a rel="nofollow" href="ftp://ftp2.fr.debian.org/pub/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp2.fr.debian.org/pub/debian-cd/">HTTP</a></li>
+<li>France: ftp.crifo.org: <a rel="nofollow" href="ftp://ftp.crifo.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.crifo.org/debian-cd/">HTTP</a></li>
+<li>France: ftp.iut-bm.univ-fcomte.fr: <a rel="nofollow" href="ftp://ftp.iut-bm.univ-fcomte.fr/debian-cd/">FTP</a></li>
+<li>France: ftp.proxad.net: <a rel="nofollow" href="ftp://ftp.proxad.net/mirrors/cdimage.debian.org/debian-cd/">FTP</a></li>
+<li>France: miroir.vbrunet.eu: <a rel="nofollow" href="ftp://miroir.vbrunet.eu/debian-cd/">FTP</a> <a rel="nofollow" href="http://miroir.vbrunet.eu/debian-cd/">HTTP</a></li>
+<li>Georgia: debian.grena.ge: <a rel="nofollow" href="ftp://debian.grena.ge/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.grena.ge/debian-cd/">HTTP</a></li>
+<li>Germany: debian.netcologne.de: <a rel="nofollow" href="ftp://debian.netcologne.de/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.netcologne.de/debian-cd/">HTTP</a></li>
+<li>Germany: debian.uni-duisburg-essen.de: <a rel="nofollow" href="ftp://debian.uni-duisburg-essen.de/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.uni-duisburg-essen.de/debian-cd/">HTTP</a></li>
+<li>Germany: deb-mirror.de: <a rel="nofollow" href="ftp://deb-mirror.de/debian-cd/">FTP</a> <a rel="nofollow" href="http://deb-mirror.de/debian-cd/">HTTP</a></li>
+<li>Germany: ftp5.gwdg.de: <a rel="nofollow" href="ftp://ftp5.gwdg.de/pub/linux/debian/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp5.gwdg.de/pub/linux/debian/debian-cd/">HTTP</a></li>
+<li>Germany: ftp.de.debian.org: <a rel="nofollow" href="ftp://ftp.de.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.de.debian.org/debian-cd/">HTTP</a></li>
+<li>Germany: ftp.fau.de: <a rel="nofollow" href="ftp://ftp.fau.de/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.fau.de/debian-cd/">HTTP</a></li>
+<li>Germany: ftp.halifax.rwth-aachen.de: <a rel="nofollow" href="ftp://ftp.halifax.rwth-aachen.de/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.halifax.rwth-aachen.de/debian-cd/">HTTP</a></li>
+<li>Germany: ftp.hawo.stw.uni-erlangen.de: <a rel="nofollow" href="ftp://ftp.hawo.stw.uni-erlangen.de/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.hawo.stw.uni-erlangen.de/debian-cd/">HTTP</a></li>
+<li>Germany: ftp.hosteurope.de: <a rel="nofollow" href="ftp://ftp.hosteurope.de/mirror/ftp.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.hosteurope.de/mirror/ftp.debian.org/debian-cd/">HTTP</a></li>
+<li>Germany: ftp.informatik.rwth-aachen.de: <a rel="nofollow" href="ftp://ftp.informatik.rwth-aachen.de/pub/Linux/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.informatik.rwth-aachen.de/ftp/pub/Linux/debian-cd/">HTTP</a></li>
+<li>Germany: ftp-stud.hs-esslingen.de: <a rel="nofollow" href="ftp://ftp-stud.hs-esslingen.de/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp-stud.hs-esslingen.de/debian-cd/">HTTP</a></li>
+<li>Germany: ftp.tu-chemnitz.de: <a rel="nofollow" href="ftp://ftp.tu-chemnitz.de/pub/linux/debian/debian-cd/">FTP</a></li>
+<li>Germany: ftp.tu-clausthal.de: <a rel="nofollow" href="ftp://ftp.tu-clausthal.de/pub/linux/debian-cd/">FTP</a></li>
+<li>Germany: ftp.uni-bayreuth.de: <a rel="nofollow" href="http://ftp.uni-bayreuth.de/debian-cd/">HTTP</a></li>
+<li>Germany: ftp.uni-stuttgart.de: <a rel="nofollow" href="ftp://ftp.uni-stuttgart.de/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.uni-stuttgart.de/debian-cd/">HTTP</a></li>
+<li>Germany: mirror.daniel-jost.net: <a rel="nofollow" href="ftp://mirror.daniel-jost.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.daniel-jost.net/debian-cd/">HTTP</a></li>
+<li>Germany: mirror.de.leaseweb.net: <a rel="nofollow" href="ftp://mirror.de.leaseweb.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.de.leaseweb.net/debian-cd/">HTTP</a></li>
+<li>Greece: debian.noc.ntua.gr: <a rel="nofollow" href="ftp://debian.noc.ntua.gr/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.noc.ntua.gr/debian-cd/">HTTP</a></li>
+<li>Hungary: ftp.bme.hu: <a rel="nofollow" href="ftp://ftp.bme.hu/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.bme.hu/debian-cd/">HTTP</a></li>
+<li>Hungary: ftp.fsn.hu: <a rel="nofollow" href="ftp://ftp.fsn.hu/pub/CDROM-Images/debian/">FTP</a></li>
+<li>Iceland: debian.simnet.is: <a rel="nofollow" href="ftp://debian.simnet.is/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.simnet.is/debian-cd/">HTTP</a></li>
+<li>Indonesia: buaya.klas.or.id: <a rel="nofollow" href="ftp://buaya.klas.or.id/debian-cd/">FTP</a></li>
+<li>Indonesia: kambing.ui.ac.id: <a rel="nofollow" href="ftp://kambing.ui.ac.id/iso/debian/">FTP</a></li>
+<li>Indonesia: kartolo.sby.datautama.net.id: <a rel="nofollow" href="http://kartolo.sby.datautama.net.id/debian-cd/">HTTP</a></li>
+<li>Indonesia: mirror.poliwangi.ac.id: <a rel="nofollow" href="http://mirror.poliwangi.ac.id/debian-cd/">HTTP</a></li>
+<li>Indonesia: mirror.unej.ac.id: <a rel="nofollow" href="ftp://mirror.unej.ac.id/debian-cd/">FTP</a></li>
+<li>Iran: mirror.iranserver.com: <a rel="nofollow" href="http://mirror.iranserver.com/debian-cd/">HTTP</a></li>
+<li>Ireland: debian.heanet.ie: <a rel="nofollow" href="ftp://debian.heanet.ie/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.heanet.ie/debian-cd/">HTTP</a></li>
+<li>Ireland: ftp.ie.debian.org: <a rel="nofollow" href="ftp://ftp.ie.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.ie.debian.org/debian-cd/">HTTP</a></li>
+<li>Israel: debian.co.il: <a rel="nofollow" href="http://debian.co.il/debian-cd/">HTTP</a></li>
+<li>Italy: debian.fastbull.org: <a rel="nofollow" href="ftp://debian.fastbull.org/debian-cd/">FTP</a></li>
+<li>Italy: debian.fastweb.it: <a rel="nofollow" href="http://debian.fastweb.it/debian-cd/">HTTP</a></li>
+<li>Italy: giano.com.dist.unige.it: <a rel="nofollow" href="ftp://giano.com.dist.unige.it/debian-cd/">FTP</a> <a rel="nofollow" href="http://giano.com.dist.unige.it/debian-cd/">HTTP</a></li>
+<li>Japan: ftp.jaist.ac.jp: <a rel="nofollow" href="ftp://ftp.jaist.ac.jp/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.jaist.ac.jp/debian-cd/">HTTP</a></li>
+<li>Japan: ftp.nara.wide.ad.jp: <a rel="nofollow" href="ftp://ftp.nara.wide.ad.jp/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.nara.wide.ad.jp/debian-cd/">HTTP</a></li>
+<li>Japan: ftp.riken.jp: <a rel="nofollow" href="ftp://ftp.riken.jp/Linux/debian/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.riken.jp/Linux/debian/debian-cd/">HTTP</a></li>
+<li>Japan: hanzubon.jp: <a rel="nofollow" href="http://hanzubon.jp/debian-cd/">HTTP</a></li>
+<li>Kenya: mirror.liquidtelecom.com: <a rel="nofollow" href="ftp://mirror.liquidtelecom.com/debian/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.liquidtelecom.com/debian/debian-cd/">HTTP</a></li>
+<li>Korea: ftp.kr.debian.org: <a rel="nofollow" href="ftp://ftp.kr.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.kr.debian.org/debian-cd/">HTTP</a></li>
+<li>Korea: ftp.lanet.kr: <a rel="nofollow" href="ftp://ftp.lanet.kr/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.lanet.kr/debian-cd/">HTTP</a></li>
+<li>Latvia: debian.koyanet.lv: <a rel="nofollow" href="ftp://debian.koyanet.lv/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.koyanet.lv/debian-cd/">HTTP</a></li>
+<li>Latvia: debian.linux.edu.lv: <a rel="nofollow" href="ftp://debian.linux.edu.lv/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.linux.edu.lv/debian-cd/">HTTP</a></li>
+<li>Lithuania: debian.mirror.vu.lt: <a rel="nofollow" href="ftp://debian.mirror.vu.lt/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.mirror.vu.lt/debian-cd/">HTTP</a></li>
+<li>Lithuania: ftp.litnet.lt: <a rel="nofollow" href="ftp://ftp.litnet.lt/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.litnet.lt/debian-cd/">HTTP</a></li>
+<li>Luxembourg: debian.mirror.root.lu: <a rel="nofollow" href="ftp://debian.mirror.root.lu/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.mirror.root.lu/debian-cd/">HTTP</a></li>
+<li>Macedonia, Republic of: mirror.t-home.mk: <a rel="nofollow" href="http://mirror.t-home.mk/debian-cd/">HTTP</a></li>
+<li>Malaysia: mirrors.apu.edu.my: <a rel="nofollow" href="ftp://mirrors.apu.edu.my/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.apu.edu.my/debian-cd/">HTTP</a></li>
+<li>Netherlands: debian.mirror.cambrium.nl: <a rel="nofollow" href="http://debian.mirror.cambrium.nl/debian-cd/">HTTP</a></li>
+<li>Netherlands: ftp.nl.debian.org: <a rel="nofollow" href="http://ftp.nl.debian.org/debian-cd/">HTTP</a></li>
+<li>Netherlands: mirror.i3d.net: <a rel="nofollow" href="ftp://mirror.i3d.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.i3d.net/pub/debian-cd/">HTTP</a></li>
+<li>Netherlands: mirror.nl.leaseweb.net: <a rel="nofollow" href="ftp://mirror.nl.leaseweb.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.nl.leaseweb.net/debian-cd/">HTTP</a></li>
+<li>Netherlands: mirrors.noction.com: <a rel="nofollow" href="ftp://mirrors.noction.com/debian/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.noction.com/debian/debian-cd/">HTTP</a></li>
+<li>New Caledonia: debian.lagoon.nc: <a rel="nofollow" href="ftp://debian.lagoon.nc/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.lagoon.nc/debian-cd/">HTTP</a></li>
+<li>New Caledonia: debian.nautile.nc: <a rel="nofollow" href="ftp://debian.nautile.nc/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.nautile.nc/debian-cd/">HTTP</a></li>
+<li>Norway: ftp.no.debian.org: <a rel="nofollow" href="ftp://ftp.no.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.no.debian.org/debian-cd/">HTTP</a></li>
+<li>Norway: ftp.uio.no: <a rel="nofollow" href="ftp://ftp.uio.no/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.uio.no/debian-cd/">HTTP</a></li>
+<li>Philippines: mirror.pregi.net: <a rel="nofollow" href="http://mirror.pregi.net/debian-cd/">HTTP</a></li>
+<li>Philippines: mirror.rise.ph: <a rel="nofollow" href="ftp://mirror.rise.ph/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.rise.ph/debian-cd/">HTTP</a></li>
+<li>Poland: ftp.icm.edu.pl: <a rel="nofollow" href="ftp://ftp.icm.edu.pl/pub/Linux/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.icm.edu.pl/pub/Linux/debian-cd/">HTTP</a></li>
+<li>Poland: ftp.man.szczecin.pl: <a rel="nofollow" href="ftp://ftp.man.szczecin.pl/pub/Linux/debian-cd/">FTP</a></li>
+<li>Poland: ftp.piotrkosoft.net: <a rel="nofollow" href="ftp://ftp.piotrkosoft.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.piotrkosoft.net/debian-cd/">HTTP</a></li>
+<li>Poland: ftp.ps.pl: <a rel="nofollow" href="ftp://ftp.ps.pl/pub/Linux/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.ps.pl/pub/Linux/debian-cd/">HTTP</a></li>
+<li>Poland: ftp.pwr.wroc.pl: <a rel="nofollow" href="ftp://ftp.pwr.wroc.pl/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.pwr.wroc.pl/debian-cd/">HTTP</a></li>
+<li>Poland: piotrkosoft.net: <a rel="nofollow" href="http://piotrkosoft.net/pub/mirrors/debian-cd/">HTTP</a></li>
+<li>Portugal: ftp.pt.debian.org: <a rel="nofollow" href="ftp://ftp.pt.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.pt.debian.org/debian-cd/">HTTP</a></li>
+<li>Portugal: ftp.rnl.tecnico.ulisboa.pt: <a rel="nofollow" href="ftp://ftp.rnl.tecnico.ulisboa.pt/pub/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.rnl.tecnico.ulisboa.pt/pub/debian-cd/">HTTP</a></li>
+<li>Portugal: mirrors.fe.up.pt: <a rel="nofollow" href="ftp://mirrors.fe.up.pt/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.fe.up.pt/debian-cd/">HTTP</a></li>
+<li>Romania: ftp.lug.ro: <a rel="nofollow" href="ftp://ftp.lug.ro/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.lug.ro/debian-cd/">HTTP</a></li>
+<li>Romania: mirrors.pidginhost.com: <a rel="nofollow" href="ftp://mirrors.pidginhost.com/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.pidginhost.com/debian-cd/">HTTP</a></li>
+<li>Romania: mirrors.xservers.ro: <a rel="nofollow" href="ftp://mirrors.xservers.ro/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.xservers.ro/debian-cd/">HTTP</a></li>
+<li>Russia: debian.nsu.ru: <a rel="nofollow" href="ftp://debian.nsu.ru/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.nsu.ru/debian-cd/">HTTP</a></li>
+<li>Russia: ftp.corbina.net: <a rel="nofollow" href="ftp://ftp.corbina.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.corbina.net/debian-cd/">HTTP</a></li>
+<li>Russia: ftp.debian.chuvsu.ru: <a rel="nofollow" href="ftp://ftp.debian.chuvsu.ru/debian-cd/">FTP</a></li>
+<li>Russia: ftp.psn.ru: <a rel="nofollow" href="ftp://ftp.psn.ru/debian-cd/">FTP</a></li>
+<li>Russia: mirror.mephi.ru: <a rel="nofollow" href="http://mirror.mephi.ru/debian-cd/">HTTP</a></li>
+<li>Russia: mirror.yandex.ru: <a rel="nofollow" href="http://mirror.yandex.ru/debian-cd/">HTTP</a></li>
+<li>Singapore: ftp.sg.debian.org: <a rel="nofollow" href="ftp://ftp.sg.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.sg.debian.org/debian-cd/">HTTP</a></li>
+<li>Singapore: mirror.0x.sg: <a rel="nofollow" href="ftp://mirror.0x.sg/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.0x.sg/debian-cd/">HTTP</a></li>
+<li>Slovakia: ftp.antik.sk: <a rel="nofollow" href="ftp://ftp.antik.sk/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.antik.sk/debian-cd/">HTTP</a></li>
+<li>South Africa: debian.mirror.ac.za: <a rel="nofollow" href="ftp://debian.mirror.ac.za/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.mirror.ac.za/debian-cd/">HTTP</a></li>
+<li>South Africa: debian.saix.net: <a rel="nofollow" href="ftp://debian.saix.net/pub/linux/distributions/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.saix.net/debian-cd/">HTTP</a></li>
+<li>South Africa: ftp.is.co.za: <a rel="nofollow" href="ftp://ftp.is.co.za/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.is.co.za/debian-cd/">HTTP</a></li>
+<li>Spain: debian.uvigo.es: <a rel="nofollow" href="ftp://debian.uvigo.es/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.uvigo.es/debian-cd/">HTTP</a></li>
+<li>Spain: ftp.cesca.cat: <a rel="nofollow" href="ftp://ftp.cesca.cat/debian-cd/">FTP</a></li>
+<li>Spain: ftp.cica.es: <a rel="nofollow" href="ftp://ftp.cica.es/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.cica.es/debian-cd/">HTTP</a></li>
+<li>Sweden: cdimage.debian.org: <a rel="nofollow" href="http://cdimage.debian.org/debian-cd/">HTTP</a></li>
+<li>Sweden: ftp.acc.umu.se: <a rel="nofollow" href="ftp://ftp.acc.umu.se/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.acc.umu.se/debian-cd/">HTTP</a></li>
+<li>Sweden: ftp.availo.se: <a rel="nofollow" href="ftp://ftp.availo.se/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.availo.se/debian-cd/">HTTP</a></li>
+<li>Sweden: ftp.ds.karen.hj.se: <a rel="nofollow" href="http://ftp.ds.karen.hj.se/debian-cd/">HTTP</a></li>
+<li>Switzerland: debian.ethz.ch: <a rel="nofollow" href="ftp://debian.ethz.ch/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.ethz.ch/debian-cd/">HTTP</a></li>
+<li>Switzerland: mirror.switch.ch: <a rel="nofollow" href="ftp://mirror.switch.ch/mirror/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.switch.ch/ftp/mirror/debian-cd/">HTTP</a></li>
+<li>Taiwan: debian.nctu.edu.tw: <a rel="nofollow" href="http://debian.nctu.edu.tw/debian-cd/">HTTP</a></li>
+<li>Taiwan: ftp.ncnu.edu.tw: <a rel="nofollow" href="ftp://ftp.ncnu.edu.tw/debian-cd/">FTP</a></li>
+<li>Taiwan: ftp.tku.edu.tw: <a rel="nofollow" href="ftp://ftp.tku.edu.tw/debian-cd/">FTP</a></li>
+<li>Taiwan: ftp.twaren.net: <a rel="nofollow" href="ftp://ftp.twaren.net/Linux/Debian/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.twaren.net/Linux/Debian/debian-cd/">HTTP</a></li>
+<li>Taiwan: ftp.tw.debian.org: <a rel="nofollow" href="ftp://ftp.tw.debian.org/debian-cd/">FTP</a></li>
+<li>Taiwan: shadow.ind.ntou.edu.tw: <a rel="nofollow" href="ftp://shadow.ind.ntou.edu.tw/debian-cd/">FTP</a> <a rel="nofollow" href="http://shadow.ind.ntou.edu.tw/debian-cd/">HTTP</a></li>
+<li>Thailand: ftp.debianclub.org: <a rel="nofollow" href="ftp://ftp.debianclub.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.debianclub.org/debian-cd/">HTTP</a></li>
+<li>Thailand: ftp.th.debian.org: <a rel="nofollow" href="ftp://ftp.th.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.th.debian.org/debian-cd/">HTTP</a></li>
+<li>Turkey: ftp.linux.org.tr: <a rel="nofollow" href="ftp://ftp.linux.org.tr/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.linux.org.tr/debian-cd/">HTTP</a></li>
+<li>Turkey: ftp.tr.debian.org: <a rel="nofollow" href="ftp://ftp.tr.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.tr.debian.org/debian-cd/">HTTP</a></li>
+<li>Ukraine: debian.org.ua: <a rel="nofollow" href="ftp://debian.org.ua/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.org.ua/debian-cd/">HTTP</a></li>
+<li>Ukraine: debian.volia.net: <a rel="nofollow" href="ftp://debian.volia.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.volia.net/debian-cd/">HTTP</a></li>
+<li>Ukraine: ftp2.debian.org.ua: <a rel="nofollow" href="ftp://ftp2.debian.org.ua/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp2.debian.org.ua/debian-cd/">HTTP</a></li>
+<li>United Kingdom: debian-iso.mirror.anlx.net: <a rel="nofollow" href="ftp://debian-iso.mirror.anlx.net/">FTP</a> <a rel="nofollow" href="http://debian-iso.mirror.anlx.net/">HTTP</a></li>
+<li>United Kingdom: ftp.ticklers.org: <a rel="nofollow" href="ftp://ftp.ticklers.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.ticklers.org/debian-cd/">HTTP</a></li>
+<li>United Kingdom: mirrorservice.org: <a rel="nofollow" href="ftp://mirrorservice.org/sites/cdimage.debian.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrorservice.org/sites/cdimage.debian.org/debian-cd/">HTTP</a></li>
+<li>United Kingdom: mirror.sov.uk.goscomb.net: <a rel="nofollow" href="ftp://mirror.sov.uk.goscomb.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.sov.uk.goscomb.net/debian-cd/">HTTP</a></li>
+<li>United Kingdom: mirror.sucs.swan.ac.uk: <a rel="nofollow" href="http://mirror.sucs.swan.ac.uk/pub/linux/debian-cdimage/">HTTP</a></li>
+<li>United Kingdom: mirror.vorboss.net: <a rel="nofollow" href="http://mirror.vorboss.net/debian-cd/">HTTP</a></li>
+<li>United States: debian.cites.illinois.edu: <a rel="nofollow" href="ftp://debian.cites.illinois.edu/pub/debian-cd/">FTP</a> <a rel="nofollow" href="http://debian.cites.illinois.edu/pub/debian-cd/">HTTP</a></li>
+<li>United States: debian.cse.msu.edu: <a rel="nofollow" href="ftp://debian.cse.msu.edu/debian-cd/">FTP</a></li>
+<li>United States: debian.osuosl.org: <a rel="nofollow" href="ftp://debian.osuosl.org/debian-cdimage/">FTP</a> <a rel="nofollow" href="http://debian.osuosl.org/debian-cdimage/">HTTP</a></li>
+<li>United States: ftp.gtlib.gatech.edu: <a rel="nofollow" href="ftp://ftp.gtlib.gatech.edu/pub/debian-cd/">FTP</a> <a rel="nofollow" href="http://ftp.gtlib.gatech.edu/pub/debian-cd/">HTTP</a></li>
+<li>United States: ftp.utexas.edu: <a rel="nofollow" href="ftp://ftp.utexas.edu/pub/debian-cd/">FTP</a></li>
+<li>United States: lug.mtu.edu: <a rel="nofollow" href="ftp://lug.mtu.edu/debian-cd/">FTP</a> <a rel="nofollow" href="http://lug.mtu.edu/debian-cd/">HTTP</a></li>
+<li>United States: mirror.ancl.hawaii.edu: <a rel="nofollow" href="ftp://mirror.ancl.hawaii.edu/linux/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.ancl.hawaii.edu/linux/debian-cd/">HTTP</a></li>
+<li>United States: mirror.cogentco.com: <a rel="nofollow" href="ftp://mirror.cogentco.com/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.cogentco.com/debian-cd/">HTTP</a></li>
+<li>United States: mirror.cs.uwm.edu: <a rel="nofollow" href="ftp://mirror.cs.uwm.edu/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.cs.uwm.edu/debian-cd/">HTTP</a></li>
+<li>United States: mirror.keystealth.org: <a rel="nofollow" href="ftp://mirror.keystealth.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.keystealth.org/debian-cd/">HTTP</a></li>
+<li>United States: mirror.math.princeton.edu: <a rel="nofollow" href="http://mirror.math.princeton.edu/pub/debian-cd/">HTTP</a></li>
+<li>United States: mirror.nexcess.net: <a rel="nofollow" href="ftp://mirror.nexcess.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.nexcess.net/debian-cd/">HTTP</a></li>
+<li>United States: mirror.rit.edu: <a rel="nofollow" href="ftp://mirror.rit.edu/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.rit.edu/debian-cd/">HTTP</a></li>
+<li>United States: mirrors.advancedhosters.com: <a rel="nofollow" href="ftp://mirrors.advancedhosters.com/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.advancedhosters.com/debian-cd/">HTTP</a></li>
+<li>United States: mirrors.bloomu.edu: <a rel="nofollow" href="ftp://mirrors.bloomu.edu/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.bloomu.edu/debian-cd/">HTTP</a></li>
+<li>United States: mirrors.gigenet.com: <a rel="nofollow" href="http://mirrors.gigenet.com/debian-cd/">HTTP</a></li>
+<li>United States: mirror.sjc02.svwh.net: <a rel="nofollow" href="http://mirror.sjc02.svwh.net/debian-cd/">HTTP</a></li>
+<li>United States: mirrors.kernel.org: <a rel="nofollow" href="ftp://mirrors.kernel.org/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.kernel.org/debian-cd/">HTTP</a></li>
+<li>United States: mirrors.modwest.com: <a rel="nofollow" href="http://mirrors.modwest.com/debian-cd/">HTTP</a></li>
+<li>United States: mirrors.ocf.berkeley.edu: <a rel="nofollow" href="ftp://mirrors.ocf.berkeley.edu/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.ocf.berkeley.edu/debian-cd/">HTTP</a></li>
+<li>United States: mirrors.syringanetworks.net: <a rel="nofollow" href="ftp://mirrors.syringanetworks.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.syringanetworks.net/debian-cd/">HTTP</a></li>
+<li>United States: mirror.steadfast.net: <a rel="nofollow" href="http://mirror.steadfast.net/debian-cd/">HTTP</a></li>
+<li>United States: mirrors.xmission.com: <a rel="nofollow" href="ftp://mirrors.xmission.com/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirrors.xmission.com/debian-cd/">HTTP</a></li>
+<li>United States: mirror.usertrust.info: <a rel="nofollow" href="http://mirror.usertrust.info/debian-cd/">HTTP</a></li>
+<li>United States: mirror.us.leaseweb.net: <a rel="nofollow" href="ftp://mirror.us.leaseweb.net/debian-cd/">FTP</a> <a rel="nofollow" href="http://mirror.us.leaseweb.net/debian-cd/">HTTP</a></li>
+</ul>
+</div> <!-- end maincol -->
+<div class="clr"></div>
+</div> <!-- end content -->
+<div id="footer">
+<hr class="hidecss">
+<ul class="subnav">
+<li><a href="../../CD/">debian_on_cd</a></li>
+<li><a href="../../CD/faq/">faq</a></li>
+<li><a href="../../CD/netinst/">net_install</a></li>
+<li><a href="../../CD/vendors/">buy</a></li>
+<li><a href="../../CD/jigdo-cd/">jigdo</a></li>
+<li><a href="../../CD/http-ftp/">http_ftp</a></li>
+<li><a href="../../CD/misc">misc</a></li>
+</ul>
+<hr>
+<!--UdmComment-->
+<div id="pageLang">
+<div id="langSelector">
+This page is also available in the following languages:
+<div id="langContainer">
+ <a href="index.bg.html" title="Bulgarian" hreflang="bg" lang="bg" rel="alternate">&#1041;&#1098;&#1083;&#1075;&#1072;&#1088;&#1089;&#1082;&#1080;&nbsp;(B&#601;lgarski)</a>
+ <a href="index.ca.html" title="Catalan" hreflang="ca" lang="ca" rel="alternate">catal&agrave;</a>
+ <a href="index.cs.html" title="Czech" hreflang="cs" lang="cs" rel="alternate">&#269;esky</a>
+ <a href="index.da.html" title="Danish" hreflang="da" lang="da" rel="alternate">dansk</a>
+ <a href="index.de.html" title="German" hreflang="de" lang="de" rel="alternate">Deutsch</a>
+ <a href="index.es.html" title="Spanish" hreflang="es" lang="es" rel="alternate">espa&ntilde;ol</a>
+ <a href="index.fr.html" title="French" hreflang="fr" lang="fr" rel="alternate">fran&ccedil;ais</a>
+ <a href="index.it.html" title="Italian" hreflang="it" lang="it" rel="alternate">Italiano</a>
+ <a href="index.hu.html" title="Hungarian" hreflang="hu" lang="hu" rel="alternate">magyar</a>
+ <a href="index.nl.html" title="Dutch" hreflang="nl" lang="nl" rel="alternate">Nederlands</a>
+ <a href="index.ja.html" title="Japanese" hreflang="ja" lang="ja" rel="alternate">&#26085;&#26412;&#35486;&nbsp;(Nihongo)</a>
+ <a href="index.pl.html" title="Polish" hreflang="pl" lang="pl" rel="alternate">polski</a>
+ <a href="index.pt.html" title="Portuguese" hreflang="pt" lang="pt" rel="alternate">Portugu&ecirc;s</a>
+ <a href="index.ru.html" title="Russian" hreflang="ru" lang="ru" rel="alternate">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;&nbsp;(Russkij)</a>
+ <a href="index.sk.html" title="Slovak" hreflang="sk" lang="sk" rel="alternate">slovensky</a>
+ <a href="index.fi.html" title="Finnish" hreflang="fi" lang="fi" rel="alternate">suomi</a>
+ <a href="index.sv.html" title="Swedish" hreflang="sv" lang="sv" rel="alternate">svenska</a>
+ <a href="index.tr.html" title="Turkish" hreflang="tr" lang="tr" rel="alternate">T&uuml;rk&ccedil;e</a>
+ <a href="index.uk.html" title="Ukrainian" hreflang="uk" lang="uk" rel="alternate">&#1091;&#1082;&#1088;&#1072;&#1111;&#1085;&#1089;&#1100;&#1082;&#1072;&nbsp;(ukrajins'ka)</a>
+</div>
+How to set <a href="../../intro/cn">the default document language</a>
+</div></div><!--/UdmComment-->
+<hr>
+<!--UdmComment-->
+<p><small>English-language <a href="/MailingLists/disclaimer">public mailing list</a> for CDs/DVDs:<br>Debian CD team &lt;<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;debian-cd&#64;lists.debian.org">debian-cd&#64;lists.debian.org</a>&gt;</small></p>
+<div id="footermap">
+<!--UdmComment-->
+<p><strong><a href="/">Home</a></strong></p>
+    <ul id="footermap-cola">
+		<li><a href="../../intro/about">About</a>
+		  <ul>
+		  <li><a href="../../social_contract">Social Contract</a></li>
+		  <li><a href="../../code_of_conduct">Code of Conduct</a></li>
+		  <li><a href="../../intro/free">Free Software</a></li>
+		  <li><a href="../../partners/">Partners</a></li>
+		  <li><a href="../../donations">Donations</a></li>
+		  <li><a href="../../contact">Contact Us</a></li>
+		  </ul>
+		</li>
+        <li><a href="../../intro/help">Help Debian</a></li>
+    </ul>
+	<ul id="footermap-colb">
+			<li><a href="../../distrib/">Getting Debian</a>
+			  <ul>
+			  <li><a href="../../distrib/netinst">Network install</a></li>
+			  <li><a href="../../CD/">CD/USB ISO images</a></li>
+			  <li><a href="../../CD/vendors/">CD vendors</a></li>
+			  <li><a href="../../distrib/pre-installed">Pre-installed</a></li>
+			  </ul>
+			</li>
+            <li><a href="../../blends/">Pure Blends</a></li>
+			<li><a href="../../distrib/packages">Debian Packages</a></li>
+			<li><a href="../../devel/">Developers' Corner</a></li>
+	</ul>
+	<ul id="footermap-colc">
+		<li><a href="../../News/">News</a>
+		  <ul>
+		  <li><a href="../../News/weekly/">Project News</a></li>
+		  <li><a href="../../events/">Events</a></li>
+		  </ul>
+		</li>
+    <li><a href="../../doc/">Documentation</a>
+      <ul>
+      <li><a href="../../releases/">Release Info</a></li>
+      <li><a href="../../releases/stable/installmanual">Installation manual</a></li>
+      <li><a href="../../doc/books">Debian Books</a></li>
+      <li><a href="https://wiki.debian.org/">Debian Wiki</a></li>
+      </ul>
+    </li>
+   </ul>
+   <ul id="footermap-cold">
+    <li><a href="../../support">Support</a>
+	  <ul>
+			  <li><a href="../../international/">Debian International</a></li>
+			  <li><a href="../../security/">Security Information</a></li>
+			  <li><a href="../../Bugs/">Bug reports</a></li>
+			  <li><a href="../../MailingLists/">Mailing Lists</a></li>
+			  <li><a href="https://lists.debian.org/">Mailing List Archives</a></li>
+			  <li><a href="../../ports/">Ports/Architectures</a></li>
+      </ul>
+    </li>
+</ul>
+<ul id="footermap-cole">
+  <li><a href="../../misc/">Miscellaneous</a></li>
+  <li><a href="../../sitemap">Site map</a></li>
+  <li><a href="https://search.debian.org/">Search</a></li>
+  <li><a href="https://bits.debian.org">The Debian Blog</a></li>
+  <li><a href="https://identi.ca/debian"><img src="../../Pics/identica.png"
+  alt="follow debian on identi.ca!" width="80" height="15"></a></li>
+  <li><a href="http://planet.debian.org"><img src="../../Pics/planet.png"
+  alt="follow debian on planet.debian.org!" width="80" height="15"></a></li>
+</ul>
+<!--/UdmComment-->
+</div> <!-- end footermap -->
+<div id="fineprint">
+<p>
+Last Modified: Mon, Oct 31 07:27:57 UTC 2016
+  <br>
+  Copyright &copy; 1997-2016
+ <a href="http://www.spi-inc.org/">SPI</a> and others; See <a href="../../license" rel="copyright">license terms</a><br>
+  Debian is a registered <a href="../../trademark">trademark</a> of Software in the Public Interest, Inc.
+</p>
+</div>
+<!--/UdmComment-->
+</div> <!-- end footer -->
+</body>
+</html>
