@@ -50,25 +50,22 @@ def execute_query(cur, query, filename=None, formatName=None):
         container += '\n'
     print
 
-    if filename == "":
+    if filename == "" or filename is None:
         print "\nShow the table of data:\n"
         print container
     else:
-        if formatName == "":
+        if formatName == "" or filename is None:
             filename += '.txt'
         else:
             filename += formatName
             writeFile(filename, container)
 
-    check_file = checkExistingFile(filename)
-    if check_file:
-        print "File already existed!"
-
 def checkExistingFile(filename):
     existed_file = False
-    PATH = "./" + filename
-    if os.path.isfile(PATH):
-        existed_file = True
+    if filename is not None:
+        PATH = "./" + filename
+        if os.path.isfile(PATH):
+            existed_file = True
     return existed_file
 
 def rename(file_name):
@@ -100,7 +97,7 @@ def input(connection):
             print "Enter the query: "
             SQL = sys.stdin.readline()
             if(SQL[:-1] == "quit"):
-                break
+                continue
             else:
                 print "Enter the filename:"
                 fileName = sys.stdin.readline()
@@ -108,8 +105,16 @@ def input(connection):
                 print "Enter the format: "
                 format = sys.stdin.readline()
                 format = format.strip()
-            execute_query(cur, SQL, fileName, format)
-            connection.commit()
+            raw_file_name = fileName + format
+            print raw_file_name
+            valid_file = checkExistingFile(raw_file_name)
+            print valid_file
+            if valid_file:
+                print "\n\nExisted File. Please change another name!!!\n"
+                continue
+            else:
+                execute_query(cur, SQL, fileName, format)
+                connection.commit()
         elif choice[:].strip() == "2":
             print "\nEnter the file name:"
             name = sys.stdin.readline()

@@ -10,13 +10,19 @@ def checkValidSQLFile(filename):
     return checkValidFile
 
 def openFile(filename):
-    inputFile = open(filename, 'r')
-    output = inputFile.read()
+    valid_file = checkValidSQLFile(filename)
+    if valid_file:
+        inputFile = open(filename, 'r')
+        output = inputFile.read()
+    else:
+        print "Wrong file. You need file with SQL extension."
     return output
 
-file = openFile("Queries.txt")
+file = openFile("Queries.sql")
 listOfQueries = re.sub('\n',' ',file)
 queries = listOfQueries.split("; ")
-print listOfQueries
-for query in queries:
-    print query
+
+cur = connectSchema("academics")
+cur.execute(queries[1])
+
+execute_query(cur,queries[1], filename=None, formatName=None)
