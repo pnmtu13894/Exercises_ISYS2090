@@ -1,5 +1,6 @@
 from Ex1 import *
 import urllib2
+import re
 
 # req = urllib2.Request('https://www.debian.org/CD/http-ftp/')
 # response = urllib2.urlopen(req)
@@ -11,13 +12,12 @@ html = text.read()
 conn = connect()
 cur = conn.cursor()
 
-# cur.execute("INSERT INTO academics.test (country, image, http, ftp) VALUES (%s, %s, %s, %s)", ("http://123", "b", "c", "d"))
-# conn.commit()
 result = re.findall(r'(<li>[\w+ \w+]+[: ][-\w+. \w+]+: <a rel="nofollow" href="\w+://[=<\>"-/:\w\d+. \w\d+]+)+', html)
-# print result
+print len(result)
 
 alter_http = ""
 alter_ftp = ""
+
 
 for i in range(len(result)):
     country = re.search(r'(?<=<li>)[\w+ \w+]+(?=:)', result[i])

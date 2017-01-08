@@ -1,0 +1,150 @@
+Query: EXPLAIN ANALYZE SELECT academic.famname as family_name, academic.givename as given_name
+FROM academic INNER JOIN interest ON academic.acnum = interest.acnum
+WHERE interest.fieldnum = 292;
+
+['Hash Join  (cost=42.96..53.81 rows=3 width=42) (actual time=0.251..0.318 rows=1 loops=1)']
+['  Hash Cond: (academic.acnum = interest.acnum)']
+['  ->  Seq Scan on academic  (cost=0.00..8.58 rows=358 width=46) (actual time=0.002..0.023 rows=358 loops=1)']
+['  ->  Hash  (cost=42.92..42.92 rows=3 width=4) (actual time=0.231..0.231 rows=1 loops=1)']
+['        Buckets: 1024  Batches: 1  Memory Usage: 9kB']
+['        ->  Seq Scan on interest  (cost=0.00..42.92 rows=3 width=4) (actual time=0.006..0.229 rows=1 loops=1)']
+['              Filter: (fieldnum = 292)']
+['              Rows Removed by Filter: 1673']
+['Planning time: 0.597 ms']
+['Execution time: 0.367 ms']
+
+['Hash Join  (cost=8.50..19.34 rows=3 width=42) (actual time=0.054..0.172 rows=1 loops=1)']
+['  Hash Cond: (academic.acnum = interest.acnum)']
+['  ->  Seq Scan on academic  (cost=0.00..8.58 rows=358 width=46) (actual time=0.002..0.062 rows=358 loops=1)']
+['  ->  Hash  (cost=8.46..8.46 rows=3 width=4) (actual time=0.026..0.026 rows=1 loops=1)']
+['        Buckets: 1024  Batches: 1  Memory Usage: 9kB']
+['        ->  Index Scan using interest_fieldnum_idx on interest  (cost=0.28..8.46 rows=3 width=4) (actual time=0.022..0.022 rows=1 loops=1)']
+['              Index Cond: (fieldnum = 292)']
+['Planning time: 0.662 ms']
+['Execution time: 0.223 ms']
+
+In this query, i generated an index on the interest.fieldnum in the WHERE statement. Therefore, with the index, there is a decrement in the
+execution time. And the significant changes are the Filter:(fieldnum = 292) and Rows Removed by Filter: 1673 in the non-index scan which do not exist
+in the index scan anymore. Also, the cost for the Hash Join decrease dramatically from 42.96..53.81 to 8.50..19.34, almost 4 times. It's the same with
+the actual time, inclining from 0.251..0.318 to 0.054..0.172.
+
+
+Query: EXPLAIN ANALYZE SELECT * FROM author ORDER BY acnum DESC;
+
+['Sort  (cost=656.09..676.71 rows=8249 width=8) (actual time=4.896..5.366 rows=8249 loops=1)']
+['  Sort Key: acnum DESC']
+['  Sort Method: quicksort  Memory: 771kB']
+['  ->  Seq Scan on author  (cost=0.00..119.49 rows=8249 width=8) (actual time=0.012..1.805 rows=8249 loops=1)']
+['Planning time: 0.263 ms']
+['Execution time: 5.772 ms']
+
+['Index Scan Backward using author_acnum_idx on author  (cost=0.29..371.95 rows=8249 width=8) (actual time=0.023..2.762 rows=8249 loops=1)']
+['Planning time: 0.328 ms']
+['Execution time: 3.154 ms']
+
+In this case, without creating an index on the the acnum column, the execution time will be 5.772 ms
+which is much more slower than the one having index.In the sequence scan, it needs to sort through the primary key which squander lots of time. In another hand,
+with the index scan Backward, the ORDER BY statement will check from the right leaf nodes of the B-trees to sort the acnum number.
+
+
+Query: EXPLAIN ANALYZE SELECT paper.panum as paper_number, paper.title as paper_title
+FROM paper
+WHERE paper.title ILIKE '%database%';
+
+['Seq Scan on paper  (cost=0.00..149.50 rows=102 width=105) (actual time=0.016..3.423 rows=167 loops=1)']
+["  Filter: (title ~~* '%database%'::text)"]
+['  Rows Removed by Filter: 4833']
+['Planning time: 0.500 ms']
+['Execution time: 3.468 ms']
+
+['Seq Scan on paper  (cost=0.00..149.50 rows=102 width=105) (actual time=0.017..3.450 rows=167 loops=1)']
+["  Filter: (title ~~* '%database%'::text)"]
+['  Rows Removed by Filter: 4833']
+['Planning time: 0.626 ms']
+['Execution time: 3.496 ms']
+
+In this circumstance, i tried to create index for the paper.title, but nothing change much. The execution time is almost similar to each other.
+Because postgreSQL does not support the index for the 'LIKE' or 'ILIKE' statements. Furthermore, the B-tree index scan just only match with the
+prefixes and the wildcard at the start of query
+
+
+['Limit  (cost=6.48..583.61 rows=100 width=147) (actual time=0.190..10.749 rows=100 loops=1)']
+['  ->  Nested Loop  (cost=0.71..43487.80 rows=7535 width=147) (actual time=0.024..10.731 rows=101 loops=1)']
+['        ->  Nested Loop  (cost=0.43..40775.61 rows=7535 width=50) (actual time=0.022..10.174 rows=101 loops=1)']
+['              Join Filter: (academic.acnum = author.acnum)']
+['              Rows Removed by Join Filter: 41931']
+['              ->  Nested Loop Semi Join  (cost=0.43..174.15 rows=327 width=50) (actual time=0.011..0.081 rows=6 loops=1)']
+['                    ->  Index Scan using academic_pkey on academic  (cost=0.15..21.52 rows=358 width=46) (actual time=0.005..0.009 rows=6 loops=1)']
+['                    ->  Index Scan using interest_acnum_idx on interest  (cost=0.28..0.70 rows=5 width=4) (actual time=0.009..0.009 rows=1 loops=6)']
+['                          Index Cond: (acnum = academic.acnum)']
+['                          Filter: (fieldnum >= 200)']
+['              ->  Materialize  (cost=0.00..160.73 rows=8249 width=8) (actual time=0.002..0.926 rows=7005 loops=6)']
+['                    ->  Seq Scan on author  (cost=0.00..119.49 rows=8249 width=8) (actual time=0.007..1.300 rows=8249 loops=1)']
+['        ->  Index Scan using paper_pkey on paper  (cost=0.28..0.35 rows=1 width=105) (actual time=0.005..0.005 rows=1 loops=101)']
+['              Index Cond: (panum = author.panum)']
+['Planning time: 1.675 ms']
+['Execution time: 10.931 ms']
+
+['Limit  (cost=6.65..628.37 rows=100 width=147) (actual time=0.164..11.678 rows=100 loops=1)']
+['  ->  Nested Loop  (cost=0.43..46847.15 rows=7535 width=147) (actual time=0.027..11.664 rows=101 loops=1)']
+['        ->  Nested Loop  (cost=0.15..44134.96 rows=7535 width=50) (actual time=0.024..11.178 rows=101 loops=1)']
+['              Join Filter: (academic.acnum = author.acnum)']
+['              Rows Removed by Join Filter: 41931']
+['              ->  Nested Loop Semi Join  (cost=0.15..3533.50 rows=327 width=50) (actual time=0.014..1.046 rows=6 loops=1)']
+['                    Join Filter: (academic.acnum = interest.acnum)']
+['                    Rows Removed by Join Filter: 3235']
+['                    ->  Index Scan using academic_pkey on academic  (cost=0.15..21.52 rows=358 width=46) (actual time=0.005..0.008 rows=6 loops=1)']
+['                    ->  Materialize  (cost=0.00..51.30 rows=1674 width=4) (actual time=0.001..0.112 rows=540 loops=6)']
+['                          ->  Seq Scan on interest  (cost=0.00..42.92 rows=1674 width=4) (actual time=0.005..0.276 rows=1048 loops=1)']
+['                                Filter: (fieldnum >= 200)']
+['              ->  Materialize  (cost=0.00..160.73 rows=8249 width=8) (actual time=0.002..0.955 rows=7005 loops=6)']
+['                    ->  Seq Scan on author  (cost=0.00..119.49 rows=8249 width=8) (actual time=0.005..1.392 rows=8249 loops=1)']
+['        ->  Index Scan using paper_pkey on paper  (cost=0.28..0.35 rows=1 width=105) (actual time=0.004..0.004 rows=1 loops=101)']
+['              Index Cond: (panum = author.panum)']
+['Planning time: 1.015 ms']
+['Execution time: 11.840 ms']
+
+
+['Sort  (cost=48.82..49.72 rows=358 width=89) (actual time=0.682..0.686 rows=44 loops=1)']
+['  Sort Key: (count(academic.acnum))']
+['  Sort Method: quicksort  Memory: 31kB']
+['  ->  HashAggregate  (cost=30.06..33.64 rows=358 width=89) (actual time=0.626..0.635 rows=44 loops=1)']
+['        Group Key: academic.deptnum, department.deptname']
+['        ->  Hash Join  (cost=14.10..27.37 rows=358 width=89) (actual time=0.262..0.433 rows=358 loops=1)']
+['              Hash Cond: (academic.deptnum = department.deptnum)']
+['              ->  Seq Scan on academic  (cost=0.00..8.58 rows=358 width=8) (actual time=0.007..0.047 rows=358 loops=1)']
+['              ->  Hash  (cost=13.55..13.55 rows=44 width=89) (actual time=0.239..0.239 rows=44 loops=1)']
+['                    Buckets: 1024  Batches: 1  Memory Usage: 14kB']
+['                    ->  Hash Join  (cost=10.46..13.55 rows=44 width=89) (actual time=0.194..0.223 rows=44 loops=1)']
+['                          Hash Cond: (department.deptnum = academic_1.deptnum)']
+['                          ->  Seq Scan on department  (cost=0.00..2.47 rows=47 width=85) (actual time=0.001..0.007 rows=47 loops=1)']
+['                          ->  Hash  (cost=9.91..9.91 rows=44 width=4) (actual time=0.182..0.182 rows=44 loops=1)']
+['                                Buckets: 1024  Batches: 1  Memory Usage: 10kB']
+['                                ->  HashAggregate  (cost=9.47..9.91 rows=44 width=4) (actual time=0.160..0.167 rows=44 loops=1)']
+['                                      Group Key: academic_1.deptnum']
+['                                      ->  Seq Scan on academic academic_1  (cost=0.00..8.58 rows=358 width=4) (actual time=0.001..0.046 rows=358 loops=1)']
+['Planning time: 1.064 ms']
+['Execution time: 0.867 ms']
+
+['Sort  (cost=48.55..49.45 rows=358 width=89) (actual time=0.474..0.474 rows=44 loops=1)']
+['  Sort Key: (count(academic.acnum))']
+['  Sort Method: quicksort  Memory: 31kB']
+['  ->  HashAggregate  (cost=29.78..33.36 rows=358 width=89) (actual time=0.430..0.440 rows=44 loops=1)']
+['        Group Key: academic.deptnum, department.deptname']
+['        ->  Hash Join  (cost=13.83..27.10 rows=358 width=89) (actual time=0.123..0.263 rows=358 loops=1)']
+['              Hash Cond: (academic.deptnum = department.deptnum)']
+['              ->  Seq Scan on academic  (cost=0.00..8.58 rows=358 width=8) (actual time=0.002..0.026 rows=358 loops=1)']
+['              ->  Hash  (cost=13.28..13.28 rows=44 width=89) (actual time=0.112..0.112 rows=44 loops=1)']
+['                    Buckets: 1024  Batches: 1  Memory Usage: 14kB']
+['                    ->  Nested Loop Semi Join  (cost=0.15..13.28 rows=44 width=89) (actual time=0.039..0.091 rows=44 loops=1)']
+['                          ->  Seq Scan on department  (cost=0.00..2.47 rows=47 width=85) (actual time=0.002..0.007 rows=47 loops=1)']
+['                          ->  Index Only Scan using academic_deptnum_idx on academic academic_1  (cost=0.15..0.46 rows=8 width=4) (actual time=0.001..0.001 rows=1 loops=47)']
+['                                Index Cond: (deptnum = department.deptnum)']
+['                                Heap Fetches: 0']
+['Planning time: 1.332 ms']
+['Execution time: 0.581 ms']
+
+In this query, i tried to generate index for academic.deptname, department.deptnum, academic.deptnum one by one. However, in the first two index,
+ nothing is gonna change and when creating the index for academic.deptnum, the query plans have changed. To be more specific, without the indexes,
+ the (WHERE department.deptnum IN (SELECT academic.deptnum FROM academic)) statement will run on the seq scan and the cost will be much larger than
+ the one that using indexes (0.00..8.58 compared with 0.15..0.46). And the "HashAggregate" disappeared in the query using indexes.
