@@ -120,24 +120,4 @@ def insert_data_into_database(table_name):
             print e
 
 insert_data_into_database("exercise2")
-# conn = connect()
-# cur = connect_to_schema(conn, 'academics')
-
-# cur.execute("CREATE INDEX fieldnum_index ON interest (fieldnum)")
-
-# sql_list = get_query_list("Queries.sql")
-#
-# for sql in sql_list:
-#     print sql
-
-# print sql_list
-# cur.execute("CREATE INDEX ON interest (fieldnum)")
-# conn.commit()
-
-# print sql_list
-# cur.execute("EXPLAIN ANALYSE " + sql_list[len(sql_list) - 1])
-
-
-# for tuple in cur.fetchall():
-#     print tuple
 
