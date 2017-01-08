@@ -104,20 +104,20 @@
       <file leaf-file-name="Ex2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Exercise2/Ex2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="436">
+              <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
               <folding>
-                <element signature="e#103#264#0" expanded="false" />
-                <element signature="e#295#611#0" expanded="false" />
-                <element signature="e#646#909#0" expanded="false" />
-                <element signature="e#1191#1373#0" expanded="false" />
-                <element signature="e#1410#1596#0" expanded="false" />
-                <element signature="e#1630#1813#0" expanded="false" />
-                <marker date="1483868174000" expanded="false" signature="1844:2566" ph="..." />
-                <marker date="1483868174000" expanded="true" signature="1944:1964" ph="DROP TABLE I... " />
-                <marker date="1483868174000" expanded="true" signature="1944:1965" ph="DROP TABLE I... " />
-                <marker date="1483868174000" expanded="false" signature="2611:3612" ph="..." />
-                <marker date="1483868174000" expanded="true" signature="3171:3367" ph="INSERT INTO exercise2... " />
+                <element signature="e#103#361#0" expanded="false" />
+                <element signature="e#392#803#0" expanded="false" />
+                <element signature="e#838#1196#0" expanded="false" />
+                <element signature="e#1234#1534#0" expanded="false" />
+                <element signature="e#1570#1832#0" expanded="false" />
+                <element signature="e#1869#2149#0" expanded="false" />
+                <element signature="e#2183#2457#0" expanded="false" />
+                <element signature="e#2493#3319#0" expanded="false" />
+                <marker date="1483869396000" expanded="true" signature="2697:2717" ph="DROP TABLE I... " />
+                <marker date="1483869396000" expanded="true" signature="2697:2718" ph="DROP TABLE I... " />
+                <marker date="1483869396000" expanded="true" signature="4039:4235" ph="INSERT INTO exercise2... " />
               </folding>
             </state>
           </provider>
@@ -289,6 +289,16 @@
               <option name="myItemId" value="Exercises_ISYS2090" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Exercises_ISYS2090" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Exercises_ISYS2090" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Exercise2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -319,16 +329,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Ex5" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Exercises_ISYS2090" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Exercises_ISYS2090" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -747,7 +747,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1094,26 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exercise1/Ex1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#130#207#0" expanded="false" />
-            <element signature="e#252#902#0" expanded="false" />
-            <element signature="e#946#2148#0" expanded="false" />
-            <element signature="e#946#1430#1" expanded="false" />
-            <element signature="e#2190#2596#0" expanded="false" />
-            <element signature="e#3084#3540#0" expanded="false" />
-            <element signature="e#3604#5023#0" expanded="false" />
-            <element signature="e#5061#5586#0" expanded="false" />
-            <element signature="e#7065#7398#0" expanded="false" />
-            <element signature="e#7775#7965#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Exercise1/Ex1_part2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1170,22 +1150,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Exercise1/Ex1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#130#207#0" expanded="false" />
+            <element signature="e#252#902#0" expanded="false" />
+            <element signature="e#946#2148#0" expanded="false" />
+            <element signature="e#946#1430#1" expanded="false" />
+            <element signature="e#2190#2596#0" expanded="false" />
+            <element signature="e#3084#3540#0" expanded="false" />
+            <element signature="e#3604#5023#0" expanded="false" />
+            <element signature="e#5061#5586#0" expanded="false" />
+            <element signature="e#7065#7398#0" expanded="false" />
+            <element signature="e#7775#7965#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Exercise2/Ex2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="436">
+          <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
           <folding>
-            <element signature="e#103#264#0" expanded="false" />
-            <element signature="e#295#611#0" expanded="false" />
-            <element signature="e#646#909#0" expanded="false" />
-            <element signature="e#1191#1373#0" expanded="false" />
-            <element signature="e#1410#1596#0" expanded="false" />
-            <element signature="e#1630#1813#0" expanded="false" />
-            <marker date="1483868174000" expanded="false" signature="1844:2566" ph="..." />
-            <marker date="1483868174000" expanded="true" signature="1944:1964" ph="DROP TABLE I... " />
-            <marker date="1483868174000" expanded="true" signature="1944:1965" ph="DROP TABLE I... " />
-            <marker date="1483868174000" expanded="false" signature="2611:3612" ph="..." />
-            <marker date="1483868174000" expanded="true" signature="3171:3367" ph="INSERT INTO exercise2... " />
+            <element signature="e#103#361#0" expanded="false" />
+            <element signature="e#392#803#0" expanded="false" />
+            <element signature="e#838#1196#0" expanded="false" />
+            <element signature="e#1234#1534#0" expanded="false" />
+            <element signature="e#1570#1832#0" expanded="false" />
+            <element signature="e#1869#2149#0" expanded="false" />
+            <element signature="e#2183#2457#0" expanded="false" />
+            <element signature="e#2493#3319#0" expanded="false" />
+            <marker date="1483869396000" expanded="true" signature="2697:2717" ph="DROP TABLE I... " />
+            <marker date="1483869396000" expanded="true" signature="2697:2718" ph="DROP TABLE I... " />
+            <marker date="1483869396000" expanded="true" signature="4039:4235" ph="INSERT INTO exercise2... " />
           </folding>
         </state>
       </provider>
